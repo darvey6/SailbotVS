@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SailbotVSv3.Models
 {
+    [Table("Wind")]
     public class Wind
     {
         [Key]
@@ -13,7 +15,6 @@ namespace SailbotVSv3.Models
         public int UCCMCurrent { get; set; }
         public int Voltage { get; set; }
         public DateTime UpdatedTime { get; set; }
-
     }
 }
 

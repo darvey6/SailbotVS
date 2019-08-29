@@ -27,8 +27,8 @@ namespace SailbotVSv3
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddEntityFrameworkSqlServer()
-                    .AddDbContext<SailbotContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:SailbotDB"]));
+            services.AddEntityFrameworkSqlServer().
+                AddDbContext<SailbotContext>(options => options.UseSqlServer(Configuration["SailbotDB"]));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
