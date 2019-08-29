@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{4327641D-7ADE-4957-964D-5950316A12BE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SailbotVSv3/Models/Wind.cs">
+    <Files>
+      <File FileName="SailbotVSv3/appsettings.json" Line="12" Column="1" />
+      <File FileName="SailbotVSv3/Startup.cs" Line="18" Column="10" />
+      <File FileName="SailbotVSv3/Program.cs" Line="1" Column="1" />
+      <File FileName="SailbotVSv3/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="SailbotVSv3/Models/SailbotContext.cs" Line="11" Column="21" />
+      <File FileName="SailbotVSv3/Models/Wind.cs" Line="1" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SailbotVSv3" expanded="True">
+            <Node name="SailbotVSv3" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True">
+                <Node name="Wind.cs" selected="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SailbotVSv3 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
