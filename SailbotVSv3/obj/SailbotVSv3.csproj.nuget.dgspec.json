@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\William\\Desktop\\sailbotv2\\SailbotVS\\SailbotVSv3\\SailbotVSv3.csproj": {}
+    "/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/SailbotVSv3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\William\\Desktop\\sailbotv2\\SailbotVS\\SailbotVSv3\\SailbotVSv3.csproj": {
+    "/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/SailbotVSv3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\William\\Desktop\\sailbotv2\\SailbotVS\\SailbotVSv3\\SailbotVSv3.csproj",
+        "projectUniqueName": "/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/SailbotVSv3.csproj",
         "projectName": "SailbotVSv3",
-        "projectPath": "C:\\Users\\William\\Desktop\\sailbotv2\\SailbotVS\\SailbotVSv3\\SailbotVSv3.csproj",
-        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\William\\Desktop\\sailbotv2\\SailbotVS\\SailbotVSv3\\obj\\",
+        "projectPath": "/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/SailbotVSv3.csproj",
+        "packagesPath": "/Users/darveychang/.nuget/packages/",
+        "outputPath": "/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/darveychang/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
