@@ -22,7 +22,6 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Repositories\" />
     <Folder Include="Views\Wind\" />
-    <Folder Include="Managers\" />
     <Folder Include="Views\BASS\" />
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +42,9 @@
   <ItemGroup>
     <Compile Remove="Views\Shared\PreprocessedT4Template.cs" />
     <Compile Remove="Views\Shared\Template.cs" />
+    <Compile Remove="Managers\BASSManager.cs" />
+    <Compile Remove="Managers\WindManager.cs" />
+    <Compile Remove="ContextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\BASS\Index.cs">

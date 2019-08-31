@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SailbotVSv3.Models;
+using System;
+
 namespace SailbotVSv3
 {
     public class Startup
@@ -27,11 +29,11 @@ namespace SailbotVSv3
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddEntityFrameworkSqlServer().
-            //    AddDbContext<SailbotContext>(options => options.UseSqlServer(Configuration["SailbotDB"]));
+            var connectionString = Configuration.GetConnectionString("SailbotDB");
+            services.AddEntityFrameworkSqlServer().
+                AddDbContext<SailbotContext>(options => options.UseSqlServer(connectionString));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
 
         }
 
@@ -61,5 +63,6 @@ namespace SailbotVSv3
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
     }
 }

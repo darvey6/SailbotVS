@@ -16,11 +16,12 @@ namespace SailbotVSv3.Repositories
 
         public List<Wind> GetAllWind()
         {
+            var a = context.Wind.First(i => i.WindReference);
+
             return new List<Wind>
             {
-                context.Wind.First(i => i.SensorID == 1)
+
             };
-            
         }
     }
 }

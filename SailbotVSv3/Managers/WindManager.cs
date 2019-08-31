@@ -9,9 +9,9 @@ namespace SailbotVSv3.Managers
     {
         private WindRepository windRepository;
 
-        public WindManager(SailbotContext context)
+        public WindManager()
         {
-            windRepository = new WindRepository(context);
+            windRepository = new WindRepository(ContextManager.GetContext());
         }
 
         public List<Wind> GetAllWind()

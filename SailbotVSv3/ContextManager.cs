@@ -1,11 +1,25 @@
-﻿using SailbotVSv3.Models;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SailbotVSv3.Models;
 namespace SailbotVSv3
 {
-    public class ContextManager
+    public static class ContextManager
     {
-        //TODO: redo to readonly and non static
-        //public SailbotContext context { get; set; }
+        private static string CONNECTION_STRING;
 
+        public static void SetConnectionString(string connectionString)
+        {
+            CONNECTION_STRING = connectionString;
+        }
 
+        public static SailbotContext GetContext()
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<SailbotContext>();
+            optionsBuilder.UseSqlServer(CONNECTION_STRING);
+
+            var context = new SailbotContext(optionsBuilder.Options);
+            return context;
+        }
     }
 }

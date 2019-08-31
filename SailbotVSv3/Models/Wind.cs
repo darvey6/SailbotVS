@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SailbotVSv3.Models
 {
-    [Table("Wind")]
     public class Wind
     {
         [Key]
