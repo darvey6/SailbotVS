@@ -16,6 +16,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+#line 1 "Template.cshtml"
+using SailbotVSv3.ViewModels;
+
+#line default
+#line hidden
+
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "2.6.0.0")]
 public partial class Template : TemplateBase
@@ -23,8 +29,92 @@ public partial class Template : TemplateBase
 
 #line hidden
 
+#line 2 "Template.cshtml"
+public WindViewModel Model { get; set; }
+
+#line default
+#line hidden
+
+
 public override void Execute()
 {
+WriteLiteral("<h1>");
+
+
+#line 4 "Template.cshtml"
+Write(Model.title);
+
+
+#line default
+#line hidden
+WriteLiteral("</h1>\r\n<h2>");
+
+
+#line 5 "Template.cshtml"
+Write(Model.date);
+
+
+#line default
+#line hidden
+WriteLiteral("</h2>\r\n\r\n");
+
+
+#line 7 "Template.cshtml"
+  
+    foreach (var wind in Model.winds)
+    {
+
+
+#line default
+#line hidden
+WriteLiteral("        <div>Sensor ID: ");
+
+
+#line 10 "Template.cshtml"
+                   Write(wind.WindDirection);
+
+
+#line default
+#line hidden
+WriteLiteral("</div>\r\n");
+
+WriteLiteral("        <br />\r\n");
+
+WriteLiteral("        <div>Voltage: ");
+
+
+#line 12 "Template.cshtml"
+                 Write(wind.UCCMVoltage);
+
+
+#line default
+#line hidden
+WriteLiteral(".</div>\r\n");
+
+WriteLiteral("        <br />\r\n");
+
+WriteLiteral("        <div>Update Time: ");
+
+
+#line 14 "Template.cshtml"
+                     Write(wind.UpdatedTime);
+
+
+#line default
+#line hidden
+WriteLiteral("</div>\r\n");
+
+WriteLiteral("        <br />\r\n");
+
+
+#line 16 "Template.cshtml"
+    }
+
+
+#line default
+#line hidden
+WriteLiteral("\r\n");
+
 }
 }
 

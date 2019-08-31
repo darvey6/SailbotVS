@@ -23,8 +23,30 @@
     <Folder Include="Repositories\" />
     <Folder Include="Views\Wind\" />
     <Folder Include="Managers\" />
+    <Folder Include="Views\BASS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Web.config" />
+    <Content Remove="Views\BASS\Index.cshtml" />
+    <Content Remove="Views\Shared\Template.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\BASS\Index.html" />
+    <None Remove="Views\Shared\PreprocessedT4Template.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\BASS\Index.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Index.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Shared\PreprocessedT4Template.cs" />
+    <Compile Remove="Views\Shared\Template.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\BASS\Index.cs">
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

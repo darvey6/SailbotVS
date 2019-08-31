@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/darveychang/Desktop/SailbotVSv3/SailbotVSv3/SailbotVSv3.csproj": {}
+    "/Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/SailbotVSv3.csproj": {}
   },
   "projects": {
-    "/Users/darveychang/Desktop/SailbotVSv3/SailbotVSv3/SailbotVSv3.csproj": {
+    "/Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/SailbotVSv3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/darveychang/Desktop/SailbotVSv3/SailbotVSv3/SailbotVSv3.csproj",
+        "projectUniqueName": "/Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/SailbotVSv3.csproj",
         "projectName": "SailbotVSv3",
-        "projectPath": "/Users/darveychang/Desktop/SailbotVSv3/SailbotVSv3/SailbotVSv3.csproj",
+        "projectPath": "/Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/SailbotVSv3.csproj",
         "packagesPath": "/Users/darveychang/.nuget/packages/",
-        "outputPath": "/Users/darveychang/Desktop/SailbotVSv3/SailbotVSv3/obj/",
+        "outputPath": "/Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
