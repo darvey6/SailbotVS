@@ -1,21 +1,21 @@
-﻿using System.Collections.Generic;
-using SailbotVSv3.Models;
+﻿using SailbotVSv3.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SailbotVSv3.Repositories
 {
-    public class WindRepository
+    public class GPSRepository
     {
         private SailbotContext context;
 
-        public WindRepository(SailbotContext context)
+        public GPSRepository(SailbotContext context)
         {
             this.context = context;
         }
 
-        public List<Wind> GetAllWind()
+        public List<GPS> GetAllGPS()
         {
-            var a = (from w in context.Wind
+            var a = (from w in context.GPS
                      select w).ToList();
             return a;
         }

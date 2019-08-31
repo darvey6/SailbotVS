@@ -1,21 +1,21 @@
-﻿using System.Collections.Generic;
-using SailbotVSv3.Models;
+﻿using SailbotVSv3.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SailbotVSv3.Repositories
 {
-    public class WindRepository
+    public class BMSRepository
     {
         private SailbotContext context;
 
-        public WindRepository(SailbotContext context)
+        public BMSRepository(SailbotContext context)
         {
             this.context = context;
         }
 
-        public List<Wind> GetAllWind()
+        public List<BMS> GetAllBMS()
         {
-            var a = (from w in context.Wind
+            var a = (from w in context.BMS
                      select w).ToList();
             return a;
         }

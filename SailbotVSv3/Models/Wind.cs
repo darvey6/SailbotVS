@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SailbotVSv3.Models
 {
+    [Table("WindView")]
     public class Wind
     {
         [Key]
@@ -12,10 +13,10 @@ namespace SailbotVSv3.Models
         public string WindDirection { get; set; }
         public bool WindReference { get; set; }
         public int WindTemperature { get; set; }
-        public int UCCMCurrent { get; set; }
-        public int UCCMVoltage { get; set; }
-        public int UCCMTemperature { get; set; }
-        public bool UCCMStatus { get; set; }
+        public int Current { get; set; }
+        public int Voltage { get; set; }
+        public int Temperature { get; set; }
+        public bool Status { get; set; }
         public DateTime UpdatedTime { get; set; }
     }
 }
