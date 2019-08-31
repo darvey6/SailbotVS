@@ -60,14 +60,6 @@
 /Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorTargetAssemblyInfo.cs
 /Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.Views.pdb
 /Users/darveychang/Desktop/SailbotVSv3 copy/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.csproj.CopyComplete
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.csprojAssemblyReference.cache
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.csproj.CoreCompileInputs.cache
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorAssemblyInfo.cache
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorAssemblyInfo.cs
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.AssemblyInfoInputs.cache
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.AssemblyInfo.cs
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.dll
-/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.pdb
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/bin/Debug/netcoreapp2.2/SailbotVSv3.deps.json
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/bin/Debug/netcoreapp2.2/SailbotVSv3.runtimeconfig.json
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/bin/Debug/netcoreapp2.2/SailbotVSv3.runtimeconfig.dev.json
@@ -75,6 +67,11 @@
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/bin/Debug/netcoreapp2.2/SailbotVSv3.pdb
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/bin/Debug/netcoreapp2.2/SailbotVSv3.Views.dll
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/bin/Debug/netcoreapp2.2/SailbotVSv3.Views.pdb
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.csproj.CoreCompileInputs.cache
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorAssemblyInfo.cache
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorAssemblyInfo.cs
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.AssemblyInfoInputs.cache
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.AssemblyInfo.cs
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.TagHelpers.input.cache
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.TagHelpers.output.cache
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorCoreGenerate.cache
@@ -90,4 +87,6 @@
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorTargetAssemblyInfo.cache
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.RazorTargetAssemblyInfo.cs
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.Views.pdb
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.dll
+/Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.pdb
 /Users/darveychang/Desktop/SailbotVS/SailbotVSv3/obj/Debug/netcoreapp2.2/SailbotVSv3.csproj.CopyComplete

@@ -16,12 +16,9 @@ namespace SailbotVSv3.Repositories
 
         public List<Wind> GetAllWind()
         {
-            var a = context.Wind.First(i => i.WindReference);
-
-            return new List<Wind>
-            {
-
-            };
+            var a = (from w in context.Wind
+                     select w).ToList();
+            return a;
         }
     }
 }

@@ -27,12 +27,11 @@ namespace SailbotVSv3.Controllers
 
             var windViewModel = new WindViewModel
             {
-                winds = listOfWind,
-                title = "Wind Data",
-                date = DateTime.Now
+                winds = listOfWind
             };
 
             return View(windViewModel);
         }
+
     }
 }
