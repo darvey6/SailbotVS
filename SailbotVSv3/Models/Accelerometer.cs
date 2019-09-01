@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("AccelerometerView")]
-    public class Accelerometer 
+    public class Accelerometer : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -38,4 +38,3 @@ namespace SailbotVSv3.Models
 
 
 
- 

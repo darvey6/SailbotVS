@@ -1,0 +1,102 @@
+﻿@using SailbotVSv3.ViewModels
+@using System.Reflection;
+@model SensorViewModel
+
+<head>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/browser.min.js"></script>
+    <script src="~/js/breakpoints.min.js"></script>
+    <script src="~/js/util.js"></script>
+    <script src="~/js/main.js"></script>
+</head>
+<table>
+    @{
+        PropertyInfo[] columns;
+        switch (Model.Type.Name)
+        {
+            case "Wind":
+                columns = Wind.GetColumns();
+                break;
+            case "WinchMotor":
+                columns = WinchMotor.GetColumns();
+                break;
+            case "RudderMotor":
+                columns = RudderMotor.GetColumns();
+                break;
+            case "GPS":
+                columns = GPS.GetColumns();
+                break;
+            case "BoomAngle":
+                columns = BoomAngle.GetColumns();
+                break;
+            case "BMS":
+                columns = BMS.GetColumns();
+                break;
+            case "Accelerometer":
+                columns = Accelerometer.GetColumns();
+                break;
+            default:
+                columns = new PropertyInfo[0];
+                break;
+        }
+        <tr>
+            @{
+                for (var i = 0; i < columns.Length; i++)
+                {
+                    <th>@columns[i].Name</th>
+                }
+            }
+        </tr>
+        var count = 0;
+        var renderButtons = Model.RenderButtons;
+        foreach (var sensor in Model.Sensors)
+        {
+            <tr>
+                @{
+                    var sensorAfterCast = Convert.ChangeType(sensor, Model.Type);
+                    for (var i = 0; i < columns.Length; i++)
+                    {
+                        <td>@columns[i].GetValue(sensorAfterCast)</td>
+                    }
+                }
+                @{
+                    if (renderButtons)
+                    {
+                        var name = @sensorAfterCast.GetType().Name;
+                        <td><button id="Edit-@name-@count" onclick="GetEdit('@name', @sensor.SensorID);">Edit</button></td>
+                        <td><button id="Details-@name-@count-test" onclick="GetHistory('@name', @sensor.SensorID);">History</button></td>
+                    }
+                }
+            </tr>
+            count++;
+        }
+    }
+</table>
+
+<script>
+    function GetEdit() {
+        $('#history').hide();
+        $('#update-form').show();
+     }
+
+        function GetHistory(type, sensorID) {
+            var param = new Object();
+        param.type = type;
+        param.sensorID = sensorID;
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetSensorHistory", "SensorDetail")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                data: $.param(param),
+                success: function (data) {
+                    $('#update-form').hide();
+                    $('#history').show();
+                    $('#history').html(data);
+                },
+                error: function (data) {
+                    $('#history').html(data);
+                }
+            });
+        }
+</script>

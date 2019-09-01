@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("RudderMotorView")]
-    public class RudderMotor
+    public class RudderMotor : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -35,4 +35,3 @@ namespace SailbotVSv3.Models
 
 
 
- 

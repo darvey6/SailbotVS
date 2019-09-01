@@ -1,0 +1,14 @@
+﻿@using SailbotVSv3.ViewModels
+@model SensorViewModel
+
+@await Component.InvokeAsync("Sensor", Model)
+
+<br />
+<br />
+
+<div id="history"></div>
+<div id="update-form" hidden>
+    <form>
+        Here is the Form....
+    </form>
+</div>

@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("BMSView")]
-    public class BMS
+    public class BMS : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -38,4 +38,3 @@ namespace SailbotVSv3.Models
 
 
 
- 

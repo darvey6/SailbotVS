@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("WinchMotorView")]
-    public class WinchMotor
+    public class WinchMotor : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -35,4 +35,3 @@ namespace SailbotVSv3.Models
 
 
 
- 

@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("BoomAngleView")]
-    public class BoomAngle
+    public class BoomAngle : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -36,4 +36,3 @@ namespace SailbotVSv3.Models
 
 
 
- 

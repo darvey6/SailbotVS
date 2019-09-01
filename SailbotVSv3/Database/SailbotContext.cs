@@ -4,7 +4,7 @@ namespace SailbotVSv3.Models
     public class SailbotContext : DbContext
     {
         public SailbotContext(DbContextOptions<SailbotContext> options) : base(options)
-        { 
+        {
         }
 
         public DbSet<Wind> Wind { get; set; }

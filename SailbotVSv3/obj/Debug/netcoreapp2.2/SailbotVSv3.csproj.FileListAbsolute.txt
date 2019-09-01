@@ -106,10 +106,7 @@ C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\SailbotVSv3.RazorCoreGenerate.cache
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Boat\Raye\Summary.g.cshtml.cs
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Wind\Index.g.cshtml.cs
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\SailbotVSv3.RazorTargetAssemblyInfo.cache
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\SailbotVSv3.RazorTargetAssemblyInfo.cs
@@ -118,3 +115,6 @@ C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\SailbotVSv3.pdb
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\SailbotVSv3.csproj.CopyComplete
 C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\SailbotVSv3.csprojAssemblyReference.cache
+C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Boat\Components\Sensor.g.cshtml.cs
+C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Boat\SensorDetail\SensorDetail.g.cshtml.cs
+C:\Users\William\Desktop\sailbotv2\SailbotVS\SailbotVSv3\obj\Debug\netcoreapp2.2\Razor\Views\Boat\SensorDetail\SensorHistory.g.cshtml.cs

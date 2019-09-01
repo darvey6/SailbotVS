@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("GPSView")]
-    public class GPS
+    public class GPS : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -44,4 +44,3 @@ namespace SailbotVSv3.Models
 
 
 
- 

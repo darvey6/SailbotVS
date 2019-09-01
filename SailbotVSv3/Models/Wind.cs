@@ -7,7 +7,7 @@ using System.Reflection;
 namespace SailbotVSv3.Models
 {
     [Table("WindView")]
-    public class Wind
+    public class Wind : ISensor
     {
         [Key]
         public int SensorID { get; set; }
@@ -23,7 +23,7 @@ namespace SailbotVSv3.Models
 
         public static PropertyInfo[] GetColumns()
         {
-           return typeof(Wind).GetProperties();
+            return typeof(Wind).GetProperties();
         }
     }
 }
@@ -41,4 +41,3 @@ namespace SailbotVSv3.Models
 
 
 
- 
