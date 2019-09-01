@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
 
 namespace SailbotVSv3.Models
 {
@@ -18,6 +20,11 @@ namespace SailbotVSv3.Models
         public int Temperature { get; set; }
         public bool Status { get; set; }
         public DateTime UpdatedTime { get; set; }
+
+        public static PropertyInfo[] GetColumns()
+        {
+           return typeof(Wind).GetProperties();
+        }
     }
 }
 

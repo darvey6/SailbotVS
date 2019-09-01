@@ -4,15 +4,29 @@
 <h1>@Model.title</h1>
 <h2></h2>
 
-@{
-    foreach (var wind in Model.winds)
-    {
-        <div>Sensor ID: @wind.WindDirection</div>
-        <br />
-        <div>Voltage: @wind.Voltage.</div>
-        <br />
-        <div>Update Time: @wind.Temperature</div>
-        <br />
-        <h1>@wind.UpdatedTime</h1>
+
+<table>
+    @{
+        var windsColumn = Wind.GetColumns();
+        <tr>
+            @{
+                for (var i = 0; i < windsColumn.Length; i++)
+                {
+                    <th>@windsColumn[i].Name</th>
+                }
+            }
+        </tr>
+        foreach (var wind in Model.winds)
+        {
+            <tr>
+            @{ 
+                for (var i = 0; i < windsColumn.Length; i++)
+                {
+                    <th>@windsColumn[i].GetValue(wind)</th>
+                }
+            }
+            </tr>
+        }
     }
-}
+</table>
+

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
 
 namespace SailbotVSv3.Models
 {
     [Table("AccelerometerView")]
-    public class Accelerometer
+    public class Accelerometer 
     {
         [Key]
         public int SensorID { get; set; }
@@ -17,6 +18,10 @@ namespace SailbotVSv3.Models
         public int Temperature { get; set; }
         public bool Status { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public static PropertyInfo[] GetColumns()
+        {
+            return typeof(Accelerometer).GetProperties();
+        }
     }
 }
 
