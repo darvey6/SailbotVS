@@ -2,7 +2,7 @@
 @model WindViewModel
 
 <h1>@Model.title</h1>
-<h2>@Model.date</h2>
+<h2></h2>
 
 @{
     foreach (var wind in Model.winds)
@@ -13,5 +13,6 @@
         <br />
         <div>Update Time: @wind.Temperature</div>
         <br />
+        <h1>@wind.UpdatedTime</h1>
     }
 }

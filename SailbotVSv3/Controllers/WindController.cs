@@ -24,7 +24,10 @@ namespace SailbotVSv3.Controllers
 
             var windViewModel = new WindViewModel
             {
-                winds = new List<Wind>()
+                winds = windManager.GetAllWind(),
+                
+
+                
             };
 
             return View(windViewModel);

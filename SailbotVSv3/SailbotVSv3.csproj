@@ -20,17 +20,27 @@
 
   <ItemGroup>
     <Folder Include="Views\Wind\" />
+    <Folder Include="Views\Boat\" />
+    <Folder Include="Views\Boat\Raye\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Web.config" />
     <Content Remove="Views\Shared\Template.cshtml" />
+    <Content Remove="Controllers\RayeController.cshtml" />
+    <Content Remove="Views\Raye\Index.cshtml" />
+    <Content Remove="Views\Tes\Home\Privacy.cshtml" />
+    <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Shared\PreprocessedT4Template.tt" />
+    <None Remove="Views\Raye\Index.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\Shared\PreprocessedT4Template.cs" />
     <Compile Remove="Views\Shared\Template.cs" />
     <Compile Remove="ContextManager.cs" />
+    <Compile Remove="Views\Raye\Index.cshtml.cs" />
   </ItemGroup>
 </Project>
