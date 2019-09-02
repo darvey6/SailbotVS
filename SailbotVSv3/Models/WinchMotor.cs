@@ -15,10 +15,6 @@ namespace SailbotVSv3.Models
         public int Temperature { get; set; }
         public bool Status { get; set; }
         public DateTime UpdatedTime { get; set; }
-        public static PropertyInfo[] GetColumns()
-        {
-            return typeof(WinchMotor).GetProperties();
-        }
     }
 }
 

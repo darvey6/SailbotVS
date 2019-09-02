@@ -1,0 +1,29 @@
+﻿@using SailbotVSv3.ViewModels
+@model SensorFormViewModel
+
+    <form method="post" action="UpdateForm">
+        @{
+            var allColumns = Model.Type.GetProperties();
+            var sensorAfterCast = Convert.ChangeType(Model.Sensor, Model.Type);
+            <input type="hidden" value="@Model.Sensor.SensorID" id="SensorID" name="SensorID"/>
+            <input type="hidden" value="@Model.Type.Name" id="SensorType" name="SensorType" />
+            for (var i = 0; i < allColumns.Length; i++)
+            {
+                if (Model.Columns.Contains(allColumns[i].Name))
+                {
+                    <div>@allColumns[i].Name</div>
+                    <input id="@allColumns[i].Name" name="@allColumns[i].Name" value="@allColumns[i].GetValue(sensorAfterCast).ToString()" type="text" />
+                    <br />
+                    <br />
+                }
+                else
+                {
+                    <div>@allColumns[i].Name</div>
+                    <label type="text">@allColumns[i].GetValue(sensorAfterCast).ToString()</label>
+                    <br />
+                    <br />
+                }
+            }
+        }
+        <button type="submit" id="update-sensor">Update</button>
+    </form>

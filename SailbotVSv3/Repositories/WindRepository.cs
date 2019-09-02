@@ -6,7 +6,7 @@ namespace SailbotVSv3.Repositories
 {
     public class WindRepository
     {
-        private SailbotContext context;
+        private readonly SailbotContext context;
 
         public WindRepository(SailbotContext context)
         {

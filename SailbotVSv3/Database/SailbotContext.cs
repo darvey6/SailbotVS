@@ -14,5 +14,6 @@ namespace SailbotVSv3.Models
         public DbSet<BoomAngle> BoomAngle { get; set; }
         public DbSet<BMS> BMS { get; set; }
         public DbSet<Accelerometer> Accelerometer { get; set; }
+        public DbSet<ModifiableColumns> ModifiableColumns { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace SailbotVSv3.Repositories
 {
     public class AccelerometerRepository
     {
-        private SailbotContext context;
+        private readonly SailbotContext context;
 
         public AccelerometerRepository(SailbotContext context)
         {

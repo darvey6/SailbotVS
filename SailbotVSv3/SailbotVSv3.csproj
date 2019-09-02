@@ -33,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\WinchMotor.cs~RF3e25149.TMP" />
+    <None Remove="Models\WinchMotor.cs~RFa0d3a56.TMP" />
     <None Remove="Views\Shared\PreprocessedT4Template.tt" />
     <None Remove="Views\Raye\Index.css" />
   </ItemGroup>

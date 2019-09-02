@@ -6,7 +6,7 @@ namespace SailbotVSv3.Repositories
 {
     public class GPSRepository
     {
-        private SailbotContext context;
+        private readonly SailbotContext context;
 
         public GPSRepository(SailbotContext context)
         {

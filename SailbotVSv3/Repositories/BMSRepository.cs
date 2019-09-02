@@ -6,7 +6,7 @@ namespace SailbotVSv3.Repositories
 {
     public class BMSRepository
     {
-        private SailbotContext context;
+        private readonly SailbotContext context;
 
         public BMSRepository(SailbotContext context)
         {

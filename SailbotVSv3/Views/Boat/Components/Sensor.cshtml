@@ -11,34 +11,7 @@
 </head>
 <table>
     @{
-        PropertyInfo[] columns;
-        switch (Model.Type.Name)
-        {
-            case "Wind":
-                columns = Wind.GetColumns();
-                break;
-            case "WinchMotor":
-                columns = WinchMotor.GetColumns();
-                break;
-            case "RudderMotor":
-                columns = RudderMotor.GetColumns();
-                break;
-            case "GPS":
-                columns = GPS.GetColumns();
-                break;
-            case "BoomAngle":
-                columns = BoomAngle.GetColumns();
-                break;
-            case "BMS":
-                columns = BMS.GetColumns();
-                break;
-            case "Accelerometer":
-                columns = Accelerometer.GetColumns();
-                break;
-            default:
-                columns = new PropertyInfo[0];
-                break;
-        }
+        var columns = Model.Type.GetProperties();
         <tr>
             @{
                 for (var i = 0; i < columns.Length; i++)
@@ -74,13 +47,27 @@
 </table>
 
 <script>
-    function GetEdit() {
-        $('#history').hide();
-        $('#update-form').show();
+    function GetEdit(type, sensorID) {
+       var param = new Object();
+        param.type = type;
+        param.sensorID = sensorID;
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetUpdateForm", "SensorDetail")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                data: $.param(param),
+                success: function (data) {
+                    $('#data').html(data);
+                },
+                error: function (data) {
+                    $('#data').html(data);
+                }
+            });
      }
 
-        function GetHistory(type, sensorID) {
-            var param = new Object();
+    function GetHistory(type, sensorID) {
+        var param = new Object();
         param.type = type;
         param.sensorID = sensorID;
             $.ajax({
@@ -90,12 +77,10 @@
                 dataType: "html",
                 data: $.param(param),
                 success: function (data) {
-                    $('#update-form').hide();
-                    $('#history').show();
-                    $('#history').html(data);
+                    $('#data').html(data);
                 },
                 error: function (data) {
-                    $('#history').html(data);
+                    $('#data').html(data);
                 }
             });
         }

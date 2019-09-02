@@ -80,12 +80,107 @@ namespace SailbotVSv3.Controllers
             return PartialView("../Boat/SensorDetail/SensorHistory");
         }
 
-        [HttpPost]
-        public IActionResult UpdateSensor(FormCollection formCollection)
+        public IActionResult GetUpdateForm(string type, int sensorID)
         {
-            // Stub
-            // Update an entry in the database base on the form collection sent back from the view
-            return PartialView();
+            var modifiableColumnManager = new ModifiableColumnManager(context);
+            ISensor sensor = null;
+            Type t = null;
+            switch (type)
+            {
+                case "Wind":
+                    sensor = context.Wind.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(Wind);
+                    break;
+                case "WinchMotor":
+                    sensor = context.WinchMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(WinchMotor);
+                    break;
+                case "RudderMotor":
+                    sensor = context.RudderMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(RudderMotor);
+                    break;
+                case "GPS":
+                    sensor = context.GPS.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(GPS);
+                    break;
+                case "BoomAngle":
+                    sensor = context.BoomAngle.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(BoomAngle);
+                    break;
+                case "BMS":
+                    sensor = context.BMS.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(BMS);
+                    break;
+                case "Accelerometer":
+                    sensor = context.Accelerometer.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(Accelerometer);
+                    break;
+                default:
+                    break;
+            }
+            var model = new SensorFormViewModel
+            {
+                Sensor = sensor,
+                Type = t,
+                Columns = modifiableColumnManager.GetModifiableColumns(type)
+            };
+
+            return PartialView("../Boat/SensorDetail/SensorUpdate", model);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateForm(IFormCollection formCollection)
+        {
+            var sensorID = int.Parse(formCollection["SensorID"].FirstOrDefault());
+            var sensorType = formCollection["SensorType"].FirstOrDefault();
+            var modifiableColumnManager = new ModifiableColumnManager(context);
+            var columns = modifiableColumnManager.GetModifiableColumns(sensorType);
+            ISensor sensor = null;
+            Type t = null;
+            switch (sensorType)
+            {
+                case "Wind":
+                    sensor = context.Wind.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(Wind);
+                    break;
+                case "WinchMotor":
+                    sensor = context.WinchMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(WinchMotor);
+                    break;
+                case "RudderMotor":
+                    sensor = context.RudderMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(RudderMotor);
+                    break;
+                case "GPS":
+                    sensor = context.GPS.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(GPS);
+                    break;
+                case "BoomAngle":
+                    sensor = context.BoomAngle.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(BoomAngle);
+                    break;
+                case "BMS":
+                    sensor = context.BMS.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(BMS);
+                    break;
+                case "Accelerometer":
+                    sensor = context.Accelerometer.Where(w => w.SensorID == sensorID).FirstOrDefault();
+                    t = typeof(Accelerometer);
+                    break;
+                default:
+                    break;
+            }
+
+            foreach (var column in columns)
+            {
+                var value = formCollection[column].FirstOrDefault();
+                var property = t.GetProperty(column);
+                property.SetValue(sensor, Convert.ChangeType(value, property.PropertyType), null);
+            }
+
+            context.SaveChanges();
+
+            return RedirectToAction("Sensor", new { type = sensorType });
         }
     }
 }

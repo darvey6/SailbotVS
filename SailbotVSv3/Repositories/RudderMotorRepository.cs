@@ -6,7 +6,7 @@ namespace SailbotVSv3.Repositories
 {
     public class RudderMotorRepository
     {
-        private SailbotContext context;
+        private readonly SailbotContext context;
 
         public RudderMotorRepository(SailbotContext context)
         {

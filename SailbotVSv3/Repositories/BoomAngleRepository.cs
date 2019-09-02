@@ -6,7 +6,7 @@ namespace SailbotVSv3.Repositories
 {
     public class BoomAngleRepository
     {
-        private SailbotContext context;
+        private readonly SailbotContext context;
 
         public BoomAngleRepository(SailbotContext context)
         {
