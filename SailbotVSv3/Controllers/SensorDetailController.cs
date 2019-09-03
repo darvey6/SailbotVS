@@ -21,53 +21,37 @@ namespace SailbotVSv3.Controllers
         public IActionResult Sensor(string type)
         {
             List<ISensor> sensors;
-            Type t = null;
-            switch (type)
+            switch(type)
             {
                 case "Wind":
-                    var windManager = new WindManager(context);
-                    sensors = windManager.GetAllWind().Select(i => i as ISensor).ToList();
-                    t = typeof(Wind);
+                    sensors = new SensorManager<Wind>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 case "WinchMotor":
-                    var winchMotorManager = new WinchMotorManager(context);
-                    sensors = winchMotorManager.GetAllWinchMotor().Select(i => i as ISensor).ToList();
-                    t = typeof(WinchMotor);
+                    sensors = new SensorManager<WinchMotor>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 case "RudderMotor":
-                    var rudderMotorManager = new RudderMotorManager(context);
-                    sensors = rudderMotorManager.GetAllRudderMotor().Select(i => i as ISensor).ToList();
-                    t = typeof(RudderMotor);
+                    sensors = new SensorManager<RudderMotor>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 case "GPS":
-                    var gpsManager = new GPSManager(context);
-                    sensors = gpsManager.GetAllGPS().Select(i => i as ISensor).ToList();
-                    t = typeof(GPS);
+                    sensors = new SensorManager<GPS>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 case "BoomAngle":
-                    var boomAngleManager = new BoomAngleManager(context);
-                    sensors = boomAngleManager.GetAllBoomAngle().Select(i => i as ISensor).ToList();
-                    t = typeof(BoomAngle);
+                    sensors = new SensorManager<BoomAngle>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 case "BMS":
-                    var bmsManager = new BMSManager(context);
-                    sensors = bmsManager.GetAllBMS().Select(i => i as ISensor).ToList();
-                    t = typeof(BMS);
+                    sensors = new SensorManager<BMS>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 case "Accelerometer":
-                    var accelerometerManager = new AccelerometerManager(context);
-                    sensors = accelerometerManager.GetAllAccelerometer().Select(i => i as ISensor).ToList();
-                    t = typeof(Accelerometer);
+                    sensors = new SensorManager<Accelerometer>(context).GetAll().Select(i => i as ISensor).ToList();
                     break;
                 default:
-                    sensors = new List<ISensor>();
-                    break;
+                    return null;
             }
 
             var model = new SensorViewModel
             {
                 Sensors = sensors,
-                Type = t,
+                Type = SailbotContext.GetSensorType(type),
                 RenderButtons = true
             };
             return View("../Boat/SensorDetail/SensorDetail", model);
@@ -84,44 +68,37 @@ namespace SailbotVSv3.Controllers
         {
             var modifiableColumnManager = new ModifiableColumnManager(context);
             ISensor sensor = null;
-            Type t = null;
             switch (type)
             {
                 case "Wind":
-                    sensor = context.Wind.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(Wind);
+                    sensor = new SensorManager<Wind>(context).GetSensor(sensorID);
                     break;
                 case "WinchMotor":
-                    sensor = context.WinchMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(WinchMotor);
+                    sensor = new SensorManager<WinchMotor>(context).GetSensor(sensorID);
                     break;
                 case "RudderMotor":
-                    sensor = context.RudderMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(RudderMotor);
+                    sensor = new SensorManager<RudderMotor>(context).GetSensor(sensorID);
                     break;
                 case "GPS":
-                    sensor = context.GPS.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(GPS);
+                    sensor = new SensorManager<GPS>(context).GetSensor(sensorID);
                     break;
                 case "BoomAngle":
-                    sensor = context.BoomAngle.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(BoomAngle);
+                    sensor = new SensorManager<BoomAngle>(context).GetSensor(sensorID);
                     break;
                 case "BMS":
-                    sensor = context.BMS.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(BMS);
+                    sensor = new SensorManager<BMS>(context).GetSensor(sensorID);
                     break;
                 case "Accelerometer":
-                    sensor = context.Accelerometer.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(Accelerometer);
+                    sensor = new SensorManager<Accelerometer>(context).GetSensor(sensorID);
                     break;
                 default:
                     break;
             }
+
             var model = new SensorFormViewModel
             {
                 Sensor = sensor,
-                Type = t,
+                Type = SailbotContext.GetSensorType(type),
                 Columns = modifiableColumnManager.GetModifiableColumns(type)
             };
 
@@ -133,49 +110,42 @@ namespace SailbotVSv3.Controllers
         {
             var sensorID = int.Parse(formCollection["SensorID"].FirstOrDefault());
             var sensorType = formCollection["SensorType"].FirstOrDefault();
-            var modifiableColumnManager = new ModifiableColumnManager(context);
-            var columns = modifiableColumnManager.GetModifiableColumns(sensorType);
             ISensor sensor = null;
-            Type t = null;
+            var type = SailbotContext.GetSensorType(sensorType);
             switch (sensorType)
             {
                 case "Wind":
-                    sensor = context.Wind.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(Wind);
+                    sensor = new SensorManager<Wind>(context).GetSensor(sensorID);
                     break;
                 case "WinchMotor":
-                    sensor = context.WinchMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(WinchMotor);
+                    sensor = new SensorManager<WinchMotor>(context).GetSensor(sensorID);
                     break;
                 case "RudderMotor":
-                    sensor = context.RudderMotor.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(RudderMotor);
+                    sensor = new SensorManager<RudderMotor>(context).GetSensor(sensorID);
                     break;
                 case "GPS":
-                    sensor = context.GPS.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(GPS);
+                    sensor = new SensorManager<GPS>(context).GetSensor(sensorID);
                     break;
                 case "BoomAngle":
-                    sensor = context.BoomAngle.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(BoomAngle);
+                    sensor = new SensorManager<BoomAngle>(context).GetSensor(sensorID);
                     break;
                 case "BMS":
-                    sensor = context.BMS.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(BMS);
+                    sensor = new SensorManager<BMS>(context).GetSensor(sensorID);
                     break;
                 case "Accelerometer":
-                    sensor = context.Accelerometer.Where(w => w.SensorID == sensorID).FirstOrDefault();
-                    t = typeof(Accelerometer);
+                    sensor = new SensorManager<Accelerometer>(context).GetSensor(sensorID);
                     break;
                 default:
                     break;
             }
 
+            var modifiableColumnManager = new ModifiableColumnManager(context);
+            var columns = modifiableColumnManager.GetModifiableColumns(sensorType);
             foreach (var column in columns)
             {
-                var value = formCollection[column].FirstOrDefault();
-                var property = t.GetProperty(column);
-                property.SetValue(sensor, Convert.ChangeType(value, property.PropertyType), null);
+                var newValue = formCollection[column].FirstOrDefault();
+                var property = type.GetProperty(column);
+                property.SetValue(sensor, Convert.ChangeType(newValue, property.PropertyType), null);
             }
 
             context.SaveChanges();
